@@ -7,7 +7,7 @@ const movies = [
     genre: ['Crime', 'Drama'],
     score: 9.3
   },
-  {
+   {
     title: 'The Godfather',
     year: 1972,
     director: 'Francis Ford Coppola',
@@ -2000,7 +2000,7 @@ const movies = [
     genre: ['Comedy', 'Drama'],
     score: 8
   }
-];
+]; 
   
 
 // Iteration 1: All directors? - Get the array of all directors.
@@ -2059,15 +2059,27 @@ function orderAlphabetically(moviesArray) {
 }
 console.log(orderAlphabetically(movies));
 
+
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
-function turnHoursToMinutes(moviesArray) {
+ function turnHoursToMinutes(moviesArray) {
         return moviesArray.map(movie => {
-            let hoursToMinute = parseInt(movie.duration) * 60
-            let minStrToNum = parseInt(movie.duration.slice(3))
-            let sum = hoursToMinute + minStrToNum
-            return { ...movie, duration: sum};
+          let hoursToMinute = 0
+          let minStrToNum = 0
+          let sum = 0
+          if(movie.duration.includes('h') && movie.duration.includes('min')){
+             hoursToMinute = parseInt(movie.duration) * 60
+             minStrToNum = parseInt(movie.duration.slice(3))
+             sum = hoursToMinute + minStrToNum
+            return { ...movie, duration: sum}
+          }
+        else{
+          hoursToMinute = parseInt(movie.duration) * 60
+          sum = hoursToMinute
+          return { ...movie, duration: sum}
+        }
         })
-}
+} 
+
 console.log(turnHoursToMinutes(movies));
 
 // BONUS - Iteration 8: Best yearly score average - Best yearly score average
