@@ -254,7 +254,7 @@ const movies = [
     duration: '2h 49min',
     genre: ['Adventure', 'Drama', 'Sci-Fi'],
     score: 8.6
-  },
+  }]/* ,
   {
     title: 'Psycho',
     year: 1960,
@@ -2000,7 +2000,7 @@ const movies = [
     genre: ['Comedy', 'Drama'],
     score: 8
   }
-]; 
+];  */
   
 
 // Iteration 1: All directors? - Get the array of all directors.
@@ -2011,7 +2011,6 @@ function getAllDirectors(moviesArray) {
     return moviesArray.map(movie => movie.director);
 }
 console.log(getAllDirectors(movies))
-
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
 function howManyMovies(moviesArray) {
